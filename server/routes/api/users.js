@@ -1,6 +1,8 @@
 const express = require("express");
-const router = express.Router;
-const users = require("./Users");
+const router = express.Router();
+const users = require("../../Users");
+
+//Get Request
 
 //rest api
 //Get users
@@ -16,3 +18,11 @@ router.get("/api/users/:id", (req, res) => {
     res.status(400).json({ msg: `No id  of ${req.params.id} found` });
   }
 });
+
+// Post request
+router.post("/api/users", (req, res) => {
+  res.send(req.body);
+});
+
+//Creat User
+module.exports = router;
