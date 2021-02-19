@@ -1,12 +1,19 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
+const router = require("./routes/api/users");
 const logger = require("./middleware/logger");
 
 //Init logger
 app.use(logger);
 
+//Body Parser Middleware
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+// User API routes
+app.use(router);
 // setting static folder
 app.use(express.static(path.join(__dirname, "public")));
 
