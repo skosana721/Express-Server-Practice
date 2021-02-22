@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const users = require("../../Users");
+const uuid = require("uuid");
+const { request } = require("express");
 
 //Get Request
 
@@ -21,7 +23,36 @@ router.get("/api/users/:id", (req, res) => {
 
 // Post request
 router.post("/api/users", (req, res) => {
-  res.send(req.body);
+  const NewUser = {
+    id: uuid.v4(),
+    name: req.body.name,
+    location: req.body.location,
+  };
+  if (!NewUser.name || !NewUser.location) {
+    return res.status(400).json({ msg: "Please enter name and location" });
+  }
+  users.push(NewUser);
+  res.json(users);
+});
+
+// PUt Request
+
+router.put("/api/users/:id", (req, res) => {
+  const found = users.some((user) => user.id === parseFloat(req.params.id));
+  if (found) {
+    const updateUser = req.body;
+    users.forEach((user) => {
+      if (user.id === parseFloat(req.params.id)) {
+        user.name = updateUser.name ? updateUser.name : user.name;
+        user.location = updateUser.location
+          ? updateUser.location
+          : user.location;
+        res.json({ msg: "User updated", user });
+      } else {
+        res.status(400).json({ msg: "Please enter name and location" });
+      }
+    });
+  }
 });
 
 //Creat User
