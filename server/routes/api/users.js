@@ -55,5 +55,19 @@ router.put("/api/users/:id", (req, res) => {
   }
 });
 
+//Delete Request
+
+router.delete("/api/users/:id", (req, res) => {
+  const result = users.some((user) => user.id === parseFloat(req.params.id));
+  if (result) {
+    res.json({
+      msg: "User deleted",
+      users: users.filter((user) => user.id !== parseFloat(req.params.id)),
+    });
+  } else {
+    res.status(400).json({ msg: `No id  of ${req.params.id} found` });
+  }
+});
+
 //Creat User
 module.exports = router;
