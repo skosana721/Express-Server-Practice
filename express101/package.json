@@ -4,7 +4,7 @@
   "description": "express sever practice",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server"
+    "dev": "nodemon expressServer"
   },
   "author": "skosana",
   "license": "ISC",
