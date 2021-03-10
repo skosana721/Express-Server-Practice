@@ -1,0 +1,14 @@
+{
+  "name": "express101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodeExpress.js",
+  "scripts": {
+    "dev": "nodemon nodeServer"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
