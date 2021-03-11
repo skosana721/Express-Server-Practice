@@ -4,12 +4,11 @@
   "description": "express sever practice",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon expressServer"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "skosana",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "express": "^4.17.1"
   }
 }
