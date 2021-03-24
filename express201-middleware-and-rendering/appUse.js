@@ -16,6 +16,9 @@ app.use(userOnline);
 
 // This will run on the get method with the path of /info
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
 app.get("/Info", userOnline, (req, res) => {
   res.send(`<h2>Info page</h2>`);
 });
