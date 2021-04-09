@@ -1,0 +1,22 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+}
+h2 {
+  text-align: center;
+  margin-top: 3rem;
+  font-weight: bold;
+  font-family: monospace;
+}
+div {
+  background-color: lightblue;
+  margin: 4rem auto 0 auto;
+  width: 400px;
+  padding: 3rem;
+}
+p {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.5rem;
+}
